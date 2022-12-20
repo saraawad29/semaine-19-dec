@@ -63,12 +63,21 @@ function numberToWords(num){
         }
     }
 console.log("Exercise 5")
-console.log(numberTowords(43));
+console.log(numberToWords(50));
 //-6- Écrivez une fonction qui prend un tableau d'objets et un nom de propriété 
 //et renvoie un tableau des valeurs de cette propriété dans chaque objet.
 
-
-
+const objectArray = [
+    {firestName: "sara", lastName: "awad"},
+    {firestName: "sara", lastName: "awad"},
+    {firestName: "sara", lastName: "awad"},
+    {firestName: "sara", lastName: "awad"},
+]
+function getPropreValues(objArray , propName) {
+    return objArray.map(obj => obj[propName])
+}
+console.log("Exercise 6")
+console.log(getPropreValues(objectArray, 'lastName'));
 
 
 //-7- Écrivez une fonction qui prend un tableau de nombres et renvoie un tableau de nombres triés par ordre décroissant.
@@ -89,19 +98,33 @@ console.log("Is it numbers sorted in descending order?",descendingOrder,"\n")
 
 let sentenceArray = "argent, gens, beau, merci, gentil";
 function capitalLettersVowel(sentence){
-    return sentence.replace(sentenceArray, vowels= "AaEeIiOoUu");  
+    return sentence.replace(/[aeiou]/gi, vowel => vowel.toUpperCase());  
 }
 const resultLettreVowel = capitalLettersVowel(sentenceArray)
 console.log("Exercise 8")
 console.log(resultLettreVowel, "\n")
 
 
-
-
-
 //-9- Écrivez une fonction qui prend une chaîne de caractères et renvoie le nombre de voyelles dans cette chaîne.
+const myString = "je veux dormir";
+function getVowels(str) {
+    let m = str.match(/[aeiou]/gi);
+    return m === null ? 0 : m.length;
+  }
+  const countResult = getVowels(myString)
+  console.log("Exercise 9")
+  console.log("This is the number of vowels in this sentence",countResult, "\n")
 
-//-10- Écrivez une fonction qui prend une chaîne de caractères et renvoie une nouvelle chaîne avec toutes les consonnes en majuscules.
+//-10- Écrivez une fonction qui prend une chaîne de caractères et renvoie une nouvelle 
+//chaîne avec toutes les consonnes en majuscules.
+
+let mysentence = "la vie en rose";
+function capitalLetters(lettre){
+    return lettre.replace(/[bcdfghjklmnpqrstvwxyz]/gi, consonnes => consonnes.toUpperCase());  
+}
+const resultLettre = capitalLetters(mysentence)
+console.log("Exercise 8")
+console.log("My sentence is :",resultLettre, "\n")
 
 
 
