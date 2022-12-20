@@ -47,6 +47,62 @@ console.log("Exercise 4")
 const sortedArray = sortAlphabetically(wordArray)
 console.log("Is it sorted?",sortedArray.toString(),"\n")
 
+//-5- Écrivez une fonction qui prend un nombre en argument et renvoie une chaîne de caractères représentant ce nombre en mots.
+// Par exemple, si l'entrée est 42, la fonction doit retourner "quarante-deux".
+
+function numberToWords(num){
+    const ones = ['', 'one', 'two', 'three' , 'four' , 'five' , 'six' , 'seven' , 'eight', 'nine'];
+    const tens = ['', '', 'twenty', 'thirty' , 'forty' , 'fifty' , 'sixty ' , 'seventy' , 'eighty', 'ninety'];
+    const teens = ['ten', 'eleven', 'twelve' , 'thirtheen' , 'fourteen' , 'fiftheen' , 'sixteen' , 'seventeen', 'eighteen' , 'ninet'];
+    if (num < 10) {
+        return ones[num];
+    } else if (num < 20) {
+        return teens [num - 10];
+    } else {
+        return tens[Math. floor(num / 10)] + '-' + ones[num % 10];
+        }
+    }
+console.log("Exercise 5")
+console.log(numberTowords(43));
+//-6- Écrivez une fonction qui prend un tableau d'objets et un nom de propriété 
+//et renvoie un tableau des valeurs de cette propriété dans chaque objet.
+
+
+
+
+
+//-7- Écrivez une fonction qui prend un tableau de nombres et renvoie un tableau de nombres triés par ordre décroissant.
+let numberArray = [1,2,7,5,8,4,9,6,3];
+    function numberDescending(figures){
+        figures.sort()
+        figures.reverse()   
+        return figures;    
+}
+const descendingOrder = numberDescending(numberArray)
+console.log("Exercise 7")
+console.log("Is it numbers sorted in descending order?",descendingOrder,"\n")
+
+
+
+//-8- Écrivez une fonction qui prend une chaîne de caractères et renvoie une nouvelle 
+//chaîne avec toutes les voyelles en majuscules.
+
+let sentenceArray = "argent, gens, beau, merci, gentil";
+function capitalLettersVowel(sentence){
+    return sentence.replace(sentenceArray, vowels= "AaEeIiOoUu");  
+}
+const resultLettreVowel = capitalLettersVowel(sentenceArray)
+console.log("Exercise 8")
+console.log(resultLettreVowel, "\n")
+
+
+
+
+
+//-9- Écrivez une fonction qui prend une chaîne de caractères et renvoie le nombre de voyelles dans cette chaîne.
+
+//-10- Écrivez une fonction qui prend une chaîne de caractères et renvoie une nouvelle chaîne avec toutes les consonnes en majuscules.
+
 
 
 
