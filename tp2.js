@@ -41,7 +41,10 @@ http3.createServer((httpRequest, httpReponse) => {
 
 
 // 4-Écrivez un programme Node.js qui utilise le module fs pour lister les fichiers d'un répertoire.
-
+//const fs4 = require(fs)
+//fs4.readdir('chemain vers le dossier', (erreur,files) => {
+//  console.log(files)
+//})
 
 // 5-Écrivez un programme Node.js qui utilise le module fs pour créer un nouveau fichier et y écrire des données.
 
@@ -62,21 +65,21 @@ console.log("Architecture: " + os.arch());
 console.log("HomeDirectory" + os.homedir());
 
 // 7-Écrivez un programme Node.js qui utilise le module child_process pour exécuter un programme en ligne de commande.
-// ls n'est pas reconnu dans windows 
-//const {exec} = require('child_process');
-//exec('ls', (error, stdout, stderr) => {
-//  if (error){
-//    console.error(`exec error: ${error}`);
-//    return;
-//    }
-//console.log(`stdout: ${stdout}`);
-//console.error(`stderr: ${stderr}`);
-//  })
+// ls n'est pas reconnu dans windows, il faut bien utiliser dir 
+const {exec} = require('child_process');
+exec('dir', (error, stdout, stderr) => {
+  if (error){
+    console.error(`exec error: ${error}`);
+    return;
+    }
+console.log(`stdout: ${stdout}`);
+console.error(`stderr: ${stderr}`);
+  })
 
 
 // 8-Écrivez un programme Node.js qui utilise le module path pour manipuler les chemins de fichiers.
 var path = require("path");
-console.log('normalization : ' + path.normalize('C:\windows\system32\cmd.exe..'));
+console.log('normalization : ' + path.normalize('C:/windows/system32/cmd.exe..'));
 
 
 
@@ -98,3 +101,10 @@ const server = http.createServer(function (request, response) { // Configurez le
 server.listen(8000);
 
 // 10-Écrivez un programme Node.js qui utilise le module events pour créer un émetteur d'événements personnalisé.
+
+//class MyEmitter extends EvencEmilter {}
+//const myEmitter = new MyEmitter();
+//myEmitter.on (' event', () => {
+//   console. log('une evenement a eu lieu!')
+//})
+//myEmitter. emit('event');
