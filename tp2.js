@@ -21,7 +21,23 @@ edit.writeFile('nouveauFichier.txt', 'Mon nouveau contenu', function (err) {
 })
 
 // 3-Écrivez un programme Node.js qui utilise le module http pour créer un serveur simple qui sert un fichier statique.
-
+const fs3 = require('fs');
+const http3 = require('http');
+    
+http3.createServer((httpRequest, httpReponse) => {
+  fs3.readFile('test.txt', 'utf-8', (error, data) => {
+      if (error){
+          console.log(error)
+          httpReponse.statusCode = 500;
+          httpReponse.end('an error has occured');
+          return
+      }
+      httpReponse.setHeader('Content-type', 'text/plain');
+      httpReponse.end(data);
+    })
+  }).listen(3000, () =>{
+      console.log('server web listening on port 3000')
+  })
 
 
 // 4-Écrivez un programme Node.js qui utilise le module fs pour lister les fichiers d'un répertoire.
@@ -46,7 +62,16 @@ console.log("Architecture: " + os.arch());
 console.log("HomeDirectory" + os.homedir());
 
 // 7-Écrivez un programme Node.js qui utilise le module child_process pour exécuter un programme en ligne de commande.
-
+// ls n'est pas reconnu dans windows 
+//const {exec} = require('child_process');
+//exec('ls', (error, stdout, stderr) => {
+//  if (error){
+//    console.error(`exec error: ${error}`);
+//    return;
+//    }
+//console.log(`stdout: ${stdout}`);
+//console.error(`stderr: ${stderr}`);
+//  })
 
 
 // 8-Écrivez un programme Node.js qui utilise le module path pour manipuler les chemins de fichiers.
@@ -59,6 +84,7 @@ console.log('normalization : ' + path.normalize('C:\windows\system32\cmd.exe..')
 // 9-Écrivez un programme Node.js qui utilise le module querystring pour analyser une chaîne de requête URL.
 const http = require('http');
 const url = require('url');
+const { stdout, stderr } = require('process');
 const server = http.createServer(function (request, response) { // Configurez le serveur HTTP pour répondre avec Hello World à toutes les requêtes.
     const queryData = url.parse(request.url, true).query;
   response.writeHead(200, {"Content-Type": "text/plain"});
