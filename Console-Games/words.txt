@@ -1,0 +1,4 @@
+words-ressours:
+milan
+madrid
+londres

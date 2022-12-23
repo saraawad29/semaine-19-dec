@@ -1,5 +1,13 @@
 console.log('WELLCOME TO THIS GAME', "\n")
 console.log('HANGMAN', "\n")
+// creation du fichier pour stocker les mots
+const fsFile = require('fs')
+  fsFile.writeFile('words.txt','words-ressours:', function (err){
+    if(err) {
+        return console.log(err)
+    }
+})
+
 //info de joueur a partir de readline
 const readline = require('readline'),
   fs = require('fs');

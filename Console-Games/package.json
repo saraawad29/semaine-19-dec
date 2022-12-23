@@ -1,0 +1,9 @@
+{
+    "name": "hangman",
+    "version": "1.0.0",
+    "description": "A simple hangman game",
+    "main": "./Console-Games/index.js",
+    "bin": {
+      "hangman": "./Console-Games/index.js"
+    }
+}
