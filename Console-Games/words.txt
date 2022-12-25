@@ -1,4 +1,1 @@
-words-ressours:
-milan
-madrid
-londres
+listWord : Paris, Madrid, Lyon

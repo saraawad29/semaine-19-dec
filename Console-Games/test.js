@@ -1,7 +1,4 @@
 
-
-// const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
 // // create alphabet ul
 //  const buttons = function () {
 //      myButtons = document.getElementById('buttons');
@@ -32,86 +29,119 @@
 // errorNumber += 1;
 // console.log(hangmanStates[errorNumber])
 // l'affichage 
-const errorArray = {
-    'error0': `
- ╔═══╗                                                       
- |   ║                                                       
-     ║                                                       
-     ║                                                       
-     ║                                                       
-███  ║                                                       
-═════╩═══            
-`,
-    'error1': `
- ╔═══╗                                                       
- |   ║                                                       
- O   ║                                                       
-     ║                                                       
-     ║                                                       
-███  ║                                                       
-═════╩═══ 
-`,
-    'error2': `
- ╔═══╗                                                       
- |   ║                                                       
- O   ║                                                       
- |   ║                                                       
-     ║                                                       
-███  ║                                                       
-═════╩═══  
-`,
-    'error3': `
- ╔═══╗                                                       
- |   ║                                                       
- O   ║                                                       
- |\\  ║                                                       
-     ║                                                       
-███  ║                                                       
-═════╩═══
-`,
-    'error4': `
- ╔═══╗                                                       
- |   ║                                                       
- O   ║                                                       
-/|\\  ║                                                       
-     ║                                                       
-███  ║                                                       
-═════╩═══
-`,
-    'error5': `
- ╔═══╗                                                       
- |   ║                                                       
- O   ║                                                       
-/|\\  ║                                                       
-  \\  ║                                                       
-███  ║                                                       
-═════╩═══ 
-`,
-    'error6': `
- ╔═══╗                                                       
- |   ║                                                       
- O   ║                                                       
-/|\\  ║                                                       
-/ \\  ║                                                       
-███  ║                                                       
-═════╩═══ 
-`
-};
+// const errorArray = {
+//     'error0': `
+//  ╔═══╗                                                       
+//  |   ║                                                       
+//      ║                                                       
+//      ║                                                       
+//      ║                                                       
+// ███  ║                                                       
+// ═════╩═══            
+// `,
+//     'error1': `
+//  ╔═══╗                                                       
+//  |   ║                                                       
+//  O   ║                                                       
+//      ║                                                       
+//      ║                                                       
+// ███  ║                                                       
+// ═════╩═══ 
+// `,
+//     'error2': `
+//  ╔═══╗                                                       
+//  |   ║                                                       
+//  O   ║                                                       
+//  |   ║                                                       
+//      ║                                                       
+// ███  ║                                                       
+// ═════╩═══  
+// `,
+//     'error3': `
+//  ╔═══╗                                                       
+//  |   ║                                                       
+//  O   ║                                                       
+//  |\\  ║                                                       
+//      ║                                                       
+// ███  ║                                                       
+// ═════╩═══
+// `,
+//     'error4': `
+//  ╔═══╗                                                       
+//  |   ║                                                       
+//  O   ║                                                       
+// /|\\  ║                                                       
+//      ║                                                       
+// ███  ║                                                       
+// ═════╩═══
+// `,
+//     'error5': `
+//  ╔═══╗                                                       
+//  |   ║                                                       
+//  O   ║                                                       
+// /|\\  ║                                                       
+//   \\  ║                                                       
+// ███  ║                                                       
+// ═════╩═══ 
+// `,
+//     'error6': `
+//  ╔═══╗                                                       
+//  |   ║                                                       
+//  O   ║                                                       
+// /|\\  ║                                                       
+// / \\  ║                                                       
+// ███  ║                                                       
+// ═════╩═══ 
+// `
+// };
 
-function printGame(error) {
-    const errorName = "error" + error;
-    console.log(errorArray[errorName]);
-}
-console.log(printGame(4))
+// function printGame(error) {
+//     const errorName = "error" + error;
+//     console.log(errorArray[errorName]);
+    
+// }
 
-const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+// console.log(printGame(i))
 
-const guess = `Guess _ _ _ _ _ _ `;
-console.log(guess)
 
-function chooseLettre(choose) {
-    if ( m === m ) {
-    const chooseLettre = `Guess m _ _ _ _ _`;
-    console.log(chooseLettre)
-    }
-}
+
+// const guess = `Guess _ _ _ _ _ _ `;
+// console.log(guess)
+
+
+
+// function chooseLettre(choose) {
+//     if ( m === m ) {
+//     const chooseLettre = `Guess m _ _ _ _ _`;
+//     console.log(chooseLettre)
+//     }
+// }
+
+// let answer = '';
+// let maxWrong = 6;
+// let mistakes = 0;
+// let guessed = [];
+// let wordStatus = null;
+// function guessedWord() {
+//     wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+//   }
+//   guessedWord();
+//   function handleGuess(chosenLetter) {
+//     guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+//     document.getElementById(chosenLetter).setAttribute('disabled', true);
+  
+//     if (answer.indexOf(chosenLetter) >= 0) {
+//       guessedWord();
+//     } else if (answer.indexOf(chosenLetter) === -1) {
+//       mistakes++;
+//       updateMistakes();
+//       checkIfGameLost();
+//       updateHangmanPicture();
+//     }
+//   }
+//   function checkIfGameWon() {
+//     if (wordStatus === answer) {
+//     }
+//   }
+
+// const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
