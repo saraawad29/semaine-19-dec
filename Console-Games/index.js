@@ -4,7 +4,7 @@ console.log('WELLCOME TO THIS GAME', "\n")
 
 console.log('HANGMAN', "\n")
 
-// creation du fichier pour stocker les mots
+// lire du fichier pour stocker les mots
 
 const fsFile = require('fs')
   fsFile.readFile('words.txt', function (err){
@@ -32,16 +32,17 @@ rl.question('What your name ? ', answer => {
     console.log('------------',"\n" )
     })
 });
+// line: utiliser quand le joureur appuie sur la touches entre pour remttre les infos 
 rl.on('line', (line) => {
   checkword(line);
-}).on('close', () => {
-  process.exit(0);
 });
+// on defini chaque variable
 let guessWord = '';
 let array = [];
 let error = 0;
 // List des mots 
-const listWord = ['Paris', 'Madrid', 'Lyon']
+const listWord = ['paris', 'madrid', 'lyon']
+//tableau 
 const errorArray = [
  `
  ╔═══╗                                                       
@@ -116,16 +117,16 @@ error = 0;
 function checkword(letter) {
   let chose;
   for (let i = 0; i < guessWord.length; i++) {
-    if (guessWord[i].toLowerCase() === letter) {
+    if (guessWord[i] === letter) {
       array[i] = guessWord[i];
-      hose = true;
+      chose = true;
     } else if (array[i] === undefined) {
       array[i] = '_';
     }
   }
 
-  chose ? chose = false : error++;
-  
+  //chose ? chose = false : error++;
+  // fonction defini les erreur, plus de 6 erreurs = perdue
   if (error === 6) {
     console.log(errorArray[error]);
     console.log('Game over');
@@ -136,11 +137,12 @@ function checkword(letter) {
   } else {
     console.log(errorArray[error]);
   }
+  //on vas determiner si le tableau contient une valeur et renvois true
   array.includes('_') ? rl.prompt() : console.log('You have won');
   console.log(array.join(' '));
 }
 
-//for getting random things
+//fonction pour choisir au hasard 
 function getRandom(max) {
   return Math.floor(Math.random() * (max));
 }
