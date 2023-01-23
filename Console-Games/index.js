@@ -14,7 +14,7 @@ const fsFile = require('fs')
 })
 
 //info de joueur a partir de readline
-const readline = require('readline'),
+const readline = require('readline')
   fs = require('fs');
 
 const rl = readline.createInterface({
@@ -37,6 +37,7 @@ rl.on('line', (line) => {
   checkword(line);
 });
 // on defini chaque variable
+let test = '';
 let guessWord = '';
 let array = [];
 let error = 0;
@@ -107,12 +108,12 @@ const errorArray = [
 ███  ║                                                       
 ═════╩═══ 
 `
-];
+]
 
 function init() {
 guessWord = listWord[getRandom(getRandom(listWord.length))];
 array = Array(guessWord.length);
-error = 0;
+error = 0; 
 }
 function checkword(letter) {
   let chose;
@@ -125,7 +126,8 @@ function checkword(letter) {
     }
   }
 
-  //chose ? chose = false : error++;
+  chose ? chose = false : error++;
+
   // fonction defini les erreur, plus de 6 erreurs = perdue
   if (error === 6) {
     console.log(errorArray[error]);
@@ -147,8 +149,6 @@ function getRandom(max) {
   return Math.floor(Math.random() * (max));
 }
 init();
-
-
 
 
 
